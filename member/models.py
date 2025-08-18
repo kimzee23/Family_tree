@@ -9,7 +9,8 @@ class Member(models.Model):
         ('widowed', 'Widowed'),
     ]
 
-    tree = models.ForeignKey(FamilyTree, on_delete=models.CASCADE, related_name='members')
+    tree = models.ForeignKey(FamilyTree, on_delete=models.CASCADE)
+    # related_name='members'
     name = models.CharField(max_length=100)
     birth_date = models.DateField()
     death_date = models.DateField(blank=True, null=True)

@@ -1,0 +1,20 @@
+<li>
+    <strong>{{ member.name }}</strong> ({{ member.birth_date }})
+    
+    {% if member.photo %}
+        <br><img src="{{ member.photo.url }}" width="100" alt="image">
+    {% endif %}
+    
+    <br>Status: {{ member.marital_status }}
+    {% if member.spouse %}
+        <br>Spouse: {{ member.spouse.name }}
+    {% endif %}
+
+    {% if member.id in member_dict %}
+        <ul>
+            {% for child in member_dict.member.id %}
+                {% include 'member/member_node.html' with member=child member_dict=member_dict %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</li>

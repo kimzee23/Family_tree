@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Share Family Tree</title>
+</head>
+<body>
+    <h1>Share a Family Tree</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Share Tree</button>
+    </form>
+</body>
+</html>
